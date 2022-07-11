@@ -20,13 +20,14 @@ public class PluginCollection {
 		plugins.clear();
 	}
 	
-	public static int listPlugins() {
+	public static void listPlugins() {
 		int counter = 1;
+		System.out.println("Currently installed plugins:");
 		for(BotPlugin bp: plugins) {
 			System.out.println(counter + ". " + bp.getInfo());
 			counter++;
 		}
-		return plugins.size();
+		System.out.println("");
 	}
 	
 	public static void startPlugNum(int i) throws IndexOutOfBoundsException{

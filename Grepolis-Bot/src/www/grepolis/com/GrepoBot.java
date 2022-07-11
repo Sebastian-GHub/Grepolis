@@ -24,7 +24,7 @@ public class GrepoBot {
 		}
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
+		driver.get("https://grepolis.com");
 		Scanner s = new Scanner(System.in);
 		System.out.print("Username: ");
 		String name = s.next();
@@ -39,7 +39,7 @@ public class GrepoBot {
 			Login l = new Login(driver);
 			l.login(name, pass);
 			Thread.sleep(3000);
-			l.world("chios");
+			l.world(world);
 		} catch (NotAWorldException e) {
 			System.out.println("Input world is not a selectable world");
 			System.exit(0);
@@ -54,7 +54,7 @@ public class GrepoBot {
 		try {
 			PluginCollection.load();
 			PluginCollection.listPlugins();
-			System.out.println("Please enter the plugins number you wanna use: ");
+			System.out.print("Please enter the plugins number you wanna use: ");
 			int pluginNumber = s.nextInt();
 			PluginCollection.startPlugNum(pluginNumber);
 		}catch (InputMismatchException e) {

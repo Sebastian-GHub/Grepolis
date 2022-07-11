@@ -18,7 +18,6 @@ public class Login {
 	}
 	
 	public void login(String a, String b) {
-		driver.get("https://grepolis.com");
 		WebElement username = driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/div[1]/div[1]/div/form/input[1]"));
 		WebElement password = driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/div[1]/div[1]/div/form/input[2]"));
 		username.sendKeys(a);

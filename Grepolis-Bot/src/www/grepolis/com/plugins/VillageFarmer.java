@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByClassName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -57,16 +58,21 @@ public class VillageFarmer extends BotPlugin implements Runnable{
 	public void basicMode() {
 		while(true) {
 			openMenu();
-			WebElement checkBox = driver.findElement(By.xpath("/html/body/div[14]/div[2]/div[5]/div[1]/div/div[9]/span[2]/a"));
+			WebElement frame = driver.findElement(By.id("gpwnd_1000"));
+			WebElement checkBox = frame.findElement(By.cssSelector(".checkbox.select_all"));
 			checkBox.click();
-			WebElement button = driver.findElement(By.xpath("/html/body/div[14]/div[2]/div[5]/div[2]/div[2]/div/ul/li[2]/div[2]/div[3]"));
+			try {
+				Thread.sleep(1500);
+			} catch (InterruptedException e1) {
+				e1.printStackTrace();
+			}
+			WebElement button = frame.findElement(By.cssSelector(".caption.js-caption"));
 			button.click();
 			try {
 				Random rn = new Random();
 				int rndmDelay = rn.nextInt(315000 - 300000 + 1) + 300000;
 				Thread.sleep(rndmDelay);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			

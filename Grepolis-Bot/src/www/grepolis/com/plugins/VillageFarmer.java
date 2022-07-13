@@ -58,15 +58,16 @@ public class VillageFarmer extends BotPlugin implements Runnable{
 	public void basicMode() {
 		while(true) {
 			openMenu();
-			WebElement frame = driver.findElement(By.id("gpwnd_1000"));
-			WebElement checkBox = frame.findElement(By.cssSelector(".checkbox.select_all"));
+			WebElement leftFrame = driver.findElement(By.id("fto_town_wrapper"));
+			WebElement rightFrame = driver.findElement(By.id("farm_town_wrapper"));
+			WebElement checkBox = leftFrame.findElement(By.cssSelector(".checkbox.select_all"));
 			checkBox.click();
 			try {
 				Thread.sleep(1500);
 			} catch (InterruptedException e1) {
 				e1.printStackTrace();
 			}
-			WebElement button = frame.findElement(By.cssSelector(".caption.js-caption"));
+			WebElement button = rightFrame.findElement(By.id("fto_claim_button"));
 			button.click();
 			try {
 				Random rn = new Random();

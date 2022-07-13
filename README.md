@@ -12,7 +12,6 @@ The alpha version 0.1.0-aplha currently has one plugin with one basic mode. It's
 
 ### Requirements
 The bot requires you to have the chromedriver downloaded, updated and in the same folder as the rest of the botfiles.
-
 Also you have to have **atleast** Java 16 installed. [Here's a tutorial for installing Java 17](https://www.youtube.com/watch?v=cL4GcZ6GJV8)
 
 Once you have all that installed just use the "Starbot" file to launch the bot, do not close the two windows opening after launching the bot.

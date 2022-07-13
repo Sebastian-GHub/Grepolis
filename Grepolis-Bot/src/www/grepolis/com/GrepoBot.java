@@ -1,6 +1,5 @@
 package www.grepolis.com;
 
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -30,8 +29,8 @@ public class GrepoBot {
 		System.out.print("Username: ");
 		String name = s.next();
 		System.out.print("Password: ");
-		clearScreen();
 		String pass = s.next();
+		clearScreen();	
 		System.out.print("World: ");
 		String world = s.next();
 		clearScreen();

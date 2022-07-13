@@ -1,5 +1,6 @@
 package www.grepolis.com;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -22,17 +23,18 @@ public class GrepoBot {
 			System.out.println("Something went wrong. Make sure to place the chromedriver.exe in the following directory: " + System.getProperty("user.dir"+"."));
 			System.out.println("Also make sure it's up to date!");
 		}
-		
+		clearScreen();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://grepolis.com");
 		Scanner s = new Scanner(System.in);
 		System.out.print("Username: ");
 		String name = s.next();
 		System.out.print("Password: ");
+		clearScreen();
 		String pass = s.next();
 		System.out.print("World: ");
 		String world = s.next();
-		
+		clearScreen();
 		
 		
 		try {
@@ -81,5 +83,12 @@ public class GrepoBot {
 	}
 	public static WebDriver getDriver() {
 		return driver;
+	}
+	
+	public static void clearScreen() {
+		for(int i = 0; i<10;i++) {
+			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		}
+		
 	}
 }

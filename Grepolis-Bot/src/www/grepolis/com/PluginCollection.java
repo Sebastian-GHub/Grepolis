@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 
 import www.grepolis.com.plugins.BotPlugin;
+import www.grepolis.com.plugins.ResourceTrader;
 import www.grepolis.com.plugins.VillageFarmer;
 
 public class PluginCollection {
@@ -15,6 +16,7 @@ public class PluginCollection {
 	public static void load() {
 		WebDriver driver = GrepoBot.getDriver();
 		plugins.add(new VillageFarmer(driver));
+		plugins.add(new ResourceTrader(driver));
 	}
 	
 	public static void clear() {

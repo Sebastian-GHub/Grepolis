@@ -57,22 +57,20 @@ public class GrepoBot {
 			PluginCollection.listPlugins();
 			System.out.print("Please enter the plugins number you wanna use: ");
 			int pluginNumber = s.nextInt();
-			
 			PluginCollection.startPlugNum(pluginNumber);
 			PluginCollection.runPlugNum(pluginNumber);
+			s.close();
 		}catch (InputMismatchException e) {
 			System.out.println("Please input a number");
-			s.close();
 			Thread.sleep(10000);
 			System.exit(0);
 		}catch(IndexOutOfBoundsException e) {
 			System.out.println("Your input number doesn't match a plugin");
-			s.close();
 			Thread.sleep(10000);
 			System.exit(0);
 		}
-		s.close();
-
+		
+		
 		
 		/*
 		 * Way to get the amount of wood in the current town. 
